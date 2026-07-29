@@ -15,7 +15,7 @@ const isAuthenticated = async (req, res, next) => {
             return res.status(400).json({ message: "no user found" })
         }
 
-        req.user = user;
+        req.id = result.userId;
 
         next();
 

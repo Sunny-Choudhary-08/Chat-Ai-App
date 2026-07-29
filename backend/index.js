@@ -4,7 +4,8 @@ const cookieParser = require('cookie-parser')
 const express = require('express');
 const connectDb = require('./config/database.js');
 const app = express();
-const userRoute = require('../backend/routes/userRoute.js')
+const userRoute = require('../backend/routes/userRoute.js');
+const messageRoute = require('../backend/routes/messageRoute.js')
 
 
 
@@ -19,6 +20,7 @@ app.use(cookieParser());
 //routes 
 
 app.use('/api/v1/user',userRoute);
+app.use('/api/v1/message',messageRoute);
 
 app.listen(PORT , ()=>{
     connectDb();
